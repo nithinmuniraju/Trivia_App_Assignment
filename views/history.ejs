@@ -1,0 +1,30 @@
+<%- include('includes/head.ejs') %>
+<link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+    <%- include('includes/navigation.ejs') %>
+    <h1>App History</h1><br>
+    <table id="customers">
+        <tr>
+          <th>Game Date</th>
+          <th>Full Name</th>
+          <th>Who is the best cricketer in the world?</th>
+          <th>What are the colors in the national flag?</th>
+        </tr>
+        <% if (history.length > 0) { %>
+            <% for (let gamehistory of history) { %>
+                <tr>
+                    <td><%= gamehistory.createdAt %></td>
+                    <td><%= gamehistory.full_name %></td>
+                    <td><%= gamehistory.question_one %></td>
+                    <td><%= gamehistory.question_two %></td>
+                </tr>
+            <% } %>
+        <% } else { %>
+            <tr>
+                <td colspan="4" style="text-align:center">No History Found</td>
+            </tr>
+        <% } %>
+      </table>
+<%- include('includes/end.ejs') %>
