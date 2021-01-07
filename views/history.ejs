@@ -18,7 +18,7 @@
                     <td><%= gamehistory.createdAt %></td>
                     <td><%= gamehistory.full_name %></td>
                     <td><%= gamehistory.question_one %></td>
-                    <td><%= gamehistory.question_two %></td>
+                    <td><%= gamehistory.question_two ? gamehistory.question_two : "-" %></td>
                 </tr>
             <% } %>
         <% } else { %>

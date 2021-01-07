@@ -20,7 +20,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 
 //Please enable to create tables
-// const db = require("./models/index");
+const db = require("./models/index");
 // db.sequelize.sync();
 
 app.use('/game',gameRoutes);
