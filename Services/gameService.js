@@ -10,7 +10,7 @@ exports.createGame = async (req) => {
     try{
         const { fname, cricket } = req;
         const flagColor = req.color.join(',');
-        gameRecord = gameModel.create({
+        gameRecord = await gameModel.create({
             "app_name" : "Trivia App",
             "full_name"	: fname,
             "question_one" : cricket,

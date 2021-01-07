@@ -18,8 +18,10 @@ app.use(bodyParser.urlencoded({ extended : true}));
 
 app.use(express.static(path.join(__dirname, 'public')));
 
-const db = require("./models/index");
-db.sequelize.sync();
+
+//Please enable to create tables
+// const db = require("./models/index");
+// db.sequelize.sync();
 
 app.use('/game',gameRoutes);
 app.use(homeRoute);
